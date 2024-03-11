@@ -20,7 +20,7 @@ namespace BusinessLayer.Concrete
 
         public List<Message> GetList()
         {
-            _messageDal.GetList();
+            return _messageDal.GetList();
         }
 
         public void TAdd(Message t)
