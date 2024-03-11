@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
-    public class ExperienceManager : IExperienceService
+    public class ExperienceManager : IGenericService<Experience>
     {
         IExperienceDal _experienceDal;
 
@@ -18,7 +18,7 @@ namespace BusinessLayer.Concrete
             _experienceDal = experienceDal;
         }
 
-        public List<Experience> GetList()
+        public List<Experience> TGetList()
         {
             return _experienceDal.GetList();
         }

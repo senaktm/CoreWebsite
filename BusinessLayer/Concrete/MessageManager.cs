@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
-    public class MessageManager : IMessageService
+    public class MessageManager : IGenericService<Message>
     {
         IMessageDal _messageDal;
 
@@ -18,7 +18,7 @@ namespace BusinessLayer.Concrete
             _messageDal = messageDal;
         }
 
-        public List<Message> GetList()
+        public List<Message> TGetList()
         {
             return _messageDal.GetList();
         }
