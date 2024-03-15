@@ -1,0 +1,33 @@
+﻿@model EntityLayer.Concrete.Portfolio
+@{
+    ViewData["Title"] = "AddPortfolio";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>AddPortfolio</h1>
+
+
+<!-- Card header -->
+<div class="card-header border-0">
+    <h3 class="mb-0">Portfolio Adding Table</h3>
+</div>
+<br />
+<br />
+@using (Html.BeginForm("AddPortfolio", "Portfolio", FormMethod.Post))
+{
+    @Html.Label("Name")
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <br />
+    @Html.Label("ImageUrl")
+    @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+    <br />
+    @Html.Label("ProjectUrl")
+    @Html.TextBoxFor(x => x.ProjectUrl, new { @class = "form-control" })
+    <br />
+    @Html.Label("ImageUrl2")
+    @Html.TextBoxFor(x => x.ImageUrl2, new { @class = "form-control" })
+    <br />
+    <br />
+    <button class="btn btn-primary">SAVE</button>
+
+}

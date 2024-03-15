@@ -15,7 +15,7 @@ namespace CoreWebsite.Controllers
 
         public IActionResult Index()
         {
-            return View("welcome sayfasý");
+            return View();
         }
 
         public IActionResult Privacy()

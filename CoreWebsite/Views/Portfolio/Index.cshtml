@@ -1,0 +1,58 @@
+﻿@using EntityLayer.Concrete
+@model List<Portfolio>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Index</h1>
+
+
+<!-- Card header -->
+<div class="card-header border-0">
+    <h3 class="mb-0">Portfolio List Table</h3>
+</div>
+<!-- Light table -->
+<div class="table-responsive">
+    <table class="table align-items-center table-flush">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col" class="sort" data-sort="name">#</th>
+                <th scope="col" class="sort" data-sort="budget">Name</th>
+                <th scope="col" class="sort" data-sort="status">ImageUrl</th>
+                <th scope="col" class="sort" data-sort="status">ProjectUrl</th>
+                <th scope="col" class="sort" data-sort="status">ImageUrl2</th>
+                <th scope="col">DELETE</th>
+                <th scope="col" class="sort" data-sort="completion">EDIT</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody class="list">
+            @foreach (var item in Model)
+            {
+
+                <tr>
+                    <th>
+                        @item.PortfolioID
+                    </th>
+                    <th class="budget">
+
+                        @item.Name
+
+                    </th>
+
+                    <td> @item.ImageUrl</td>
+                    <td> @item.ProjectUrl</td>
+                    <td> @item.ImageUrl2</td>
+                    <td><a href="/Portfolio/DeletePortfolio/@item.PortfolioID" class="btn btn-danger">DELETE</a></td>
+                    <td><a href="/Portfolio/EditePortfolio/@item.PortfolioID" class="btn btn-info">EDIT</a></td>
+
+
+                </tr>
+            }
+        </tbody>
+    </table>
+    <td><a href="/Portfolio/AddPortfolio/" class="btn btn-primary">ADD NEW PROJECT</a></td>
+</div>
+
+
