@@ -17,17 +17,44 @@
 {
     @Html.Label("Name")
     @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Name)
     <br />
     @Html.Label("ImageUrl")
     @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.ImageUrl)
     <br />
     @Html.Label("ImageUrl2")
     @Html.TextBoxFor(x => x.ImageUrl2, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.ImageUrl2)
     <br />
     @Html.Label("ProjectUrl")
     @Html.TextBoxFor(x => x.ProjectUrl, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.ProjectUrl)
     <br />
-
+    @Html.Label("Price")
+    @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Price)
+    <br />
+    @Html.Label("Completion")
+    @Html.TextBoxFor(x => x.Completion, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Completion)
+    <br />
+    @Html.Label("ImageUrl3")
+    @Html.TextBoxFor(x => x.ImageUrl3, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.ImageUrl3)
+    <br />
+    @Html.Label("ImageUrl4")
+    @Html.TextBoxFor(x => x.ImageUrl4, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.ImageUrl4)
+    <br />
+    @Html.Label("Platform")
+    @Html.TextBoxFor(x => x.Platform, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Platform)
+    <br />
+    @Html.Label("Status")
+    @Html.TextBoxFor(x => x.Status, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Status)
+    <br />
     <button class="btn btn-primary">SAVE</button>
 
 }
