@@ -1,62 +1,69 @@
 ﻿@model EntityLayer.Concrete.Portfolio
 @{
     ViewData["Title"] = "EditPortfolio";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
-
-
-
-<!-- Card header -->
-<div class="card-header border-0">
-    <h3 class="mb-0">Portfolio Editing Page</h3>
-</div>
-<br />
-<br />
 
 
 @using (Html.BeginForm("EditPortfolio", "Portfolio", FormMethod.Post))
 {
-    @Html.HiddenFor(x => x.PortfolioID)
-    @Html.Label("Name")
-    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
-    @Html.ValidationMessageFor(x => x.Name)
-    <br />
-    @Html.Label("ImageUrl")
-    @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
-    @Html.ValidationMessageFor(x => x.ImageUrl)
-    <br />
-    @Html.Label("ImageUrl2")
-    @Html.TextBoxFor(x => x.ImageUrl2, new { @class = "form-control" })
-    @Html.ValidationMessageFor(x => x.ImageUrl2)
-    <br />
-    @Html.Label("ProjectUrl")
-    @Html.TextBoxFor(x => x.ProjectUrl, new { @class = "form-control" })
-    @Html.ValidationMessageFor(x => x.ProjectUrl)
-    <br />
-    @Html.Label("Price")
-    @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
-    @Html.ValidationMessageFor(x => x.Price)
-    <br />
-    @Html.Label("Completion")
-    @Html.TextBoxFor(x => x.Completion, new { @class = "form-control" })
-    @Html.ValidationMessageFor(x => x.Completion)
-    <br />
-    @Html.Label("ImageUrl3")
-    @Html.TextBoxFor(x => x.ImageUrl3, new { @class = "form-control" })
-    @Html.ValidationMessageFor(x => x.ImageUrl3)
-    <br />
-    @Html.Label("ImageUrl4")
-    @Html.TextBoxFor(x => x.ImageUrl4, new { @class = "form-control" })
-    @Html.ValidationMessageFor(x => x.ImageUrl4)
-    <br />
-    @Html.Label("Platform")
-    @Html.TextBoxFor(x => x.Platform, new { @class = "form-control" })
-    @Html.ValidationMessageFor(x => x.Platform)
-    <br />
-    @Html.Label("Status")
-    @Html.TextBoxFor(x => x.Status, new { @class = "form-control" })
-    @Html.ValidationMessageFor(x => x.Status)
-    <br />
-    <button class="btn btn-success">SAVE</button>
-}
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Portfolio Editing Page </h4>
+                <form class="forms-sample">
+                    @Html.HiddenFor(x => x.PortfolioID)
+                    <div class="form-group">
+                        @Html.Label("Name")
+                        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.Name)
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("ImageUrl")
+                        @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.ImageUrl)
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("ProjectUrl")
+                        @Html.TextBoxFor(x => x.ProjectUrl, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.ProjectUrl)
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("Price")
+                        @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.Price)
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("Completion")
+                        @Html.TextBoxFor(x => x.Completion, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.Completion)
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("ImageUrl3")
+                        @Html.TextBoxFor(x => x.ImageUrl3, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.ImageUrl3)
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("ImageUrl4")
+                        @Html.TextBoxFor(x => x.ImageUrl4, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.ImageUrl4)
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("Platform")
+                        @Html.TextBoxFor(x => x.Platform, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.Platform)
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("Status")
+                        @Html.TextBoxFor(x => x.Status, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.Status)
+                    </div>
 
+                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                    <button class="btn btn-dark">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+}

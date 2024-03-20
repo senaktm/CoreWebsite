@@ -3,55 +3,51 @@
 
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
 
 
-<!-- Card header -->
-<div class="card-header border-0">
-    <h3 class="mb-0">Experience List Table</h3>
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Experience List Table</h4>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Date</th>
+                            <th>ImageUrl</th>
+                            <th>Description</th>
+                            <th>Delete</th>
+                            <th>Edit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+
+                            <tr>
+                                <td> @item.ExperienceID</td>
+
+                                <td> @item.Name  </td>
+
+                                <td> @item.Date</td>
+                                <td> @item.ImageUrl</td>
+                                <td> @item.Description</td>
+                                <td><a href="/Experience/DeleteExperience/@item.ExperienceID" class="btn btn-danger">DELETE</a></td>
+                                <td><a href="/Experience/EditExperience/@item.ExperienceID" class="btn btn-info">EDIT</a></td>
+
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+               
+            </div>
+        </div>
+    </div>
 </div>
-<!-- Light table -->
-<div class="table-responsive">
-    <table class="table align-items-center table-flush">
-        <thead class="thead-light">
-            <tr>
-                <th scope="col" class="sort" data-sort="name">#</th>
-                <th scope="col" class="sort" data-sort="budget">Name</th>
-                <th scope="col" class="sort" data-sort="status">Date</th>
-                <th scope="col" class="sort" data-sort="status">ImageUrl</th>
-                <th scope="col" class="sort" data-sort="status">Description</th>
-                <th scope="col">DELETE</th>
-                <th scope="col" class="sort" data-sort="completion">EDIT</th>
-                <th scope="col"></th>
-            </tr>
-        </thead>
-        <tbody class="list">
-            @foreach (var item in Model)
-            {
-
-                <tr>
-                    <th>
-                        @item.ExperienceID
-                    </th>
-                    <th class="budget">
-
-                            @item.Name
-                            
-                        </th>   
-        
-                    <td> @item.Date</td>
-                    <td> @item.ImageUrl</td>
-                    <td> @item.Description</td>
-                    <td><a href="/Experience/DeleteExperience/@item.ExperienceID" class="btn btn-danger">DELETE</a></td>
-                    <td><a href="/Experience/EditExperience/@item.ExperienceID" class="btn btn-info">EDIT</a></td>
-                   
-
-                </tr>
-            }
-        </tbody>
-    </table>
-    <td><a href="/Experience/AddExperience/" class="btn btn-primary">ADD NEW EXPERIENCE</a></td>
-</div>
-
-
+<a href="/Experience/AddExperience/" class="btn btn-primary">ADD NEW EXPERIENCE</a>

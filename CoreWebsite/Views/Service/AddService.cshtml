@@ -5,26 +5,30 @@
 }
 
 
-<!-- Card header -->
-<div class="card-header border-0">
-    <h3 class="mb-0">Service Adding Table</h3>
-</div>
-<br />
-<br />
 @using (Html.BeginForm("AddService", "Service", FormMethod.Post))
 {
-    @Html.Label("Title")
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Skill Editing Page </h4>
+                <form class="forms-sample">
+                    @Html.HiddenFor(x => x.ServiceID)
+                    <div class="form-group">
 
+                        @Html.Label("Title")
+                        @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("ImageUrl")
+                        @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+                    </div>
 
-
-@Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
-<br />
-@Html.Label("ImageUrl")
-@Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
-<br />
-<br />
-
-<button class="btn btn-primary">SAVE</button>
+                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                    <button class="btn btn-dark">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
 }
 
 

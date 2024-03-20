@@ -1,30 +1,32 @@
 ﻿@model EntityLayer.Concrete.Skill
 @{
     ViewData["Title"] = "EditSkill";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
-
-
-
-
-<!-- Card header -->
-<div class="card-header border-0">
-    <h3 class="mb-0">Skill Editing Page</h3>
-</div>
-<br />
-<br />
 
 
 @using (Html.BeginForm("EditSkill", "Skill", FormMethod.Post))
 {
-    @Html.HiddenFor(x=>x.SkillID)
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Skill Editing Page </h4>
+                <form class="forms-sample">
+                    @Html.HiddenFor(x => x.SkillID)
+                    <div class="form-group">
 
-    @Html.Label("Title")
-    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
-    <br />
-    @Html.Label("Value")
-    @Html.TextBoxFor(x => x.Value, new { @class = "form-control" })
-    <br />
-    <br />
-    <button class="btn btn-success">SAVE</button>
+                        @Html.Label("Title")
+                        @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("Value")
+                        @Html.TextBoxFor(x => x.Value, new { @class = "form-control" })
+                    </div>
+
+                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                    <button class="btn btn-dark">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
 }
