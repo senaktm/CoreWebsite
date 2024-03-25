@@ -32,5 +32,9 @@ namespace CoreWebsite.Controllers
         {
             return PartialView();
         }
+        public PartialViewResult NewSidebarPartial()
+        {
+            return PartialView();
+        }
     }
 }
