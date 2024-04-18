@@ -7,9 +7,6 @@
 
 <h1>SenderMessage</h1>
 
-@{
-    string color = "";
-}
 
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
@@ -32,27 +29,16 @@
                     <tbody>
                         @foreach (var item in Model)
                         {
-                            @*      if (item.Status == "video")
-                        {
-                        color = "badge badge-danger";
-                        }
-                        else if (item.Status == "article")
-                        {
-                        color = "badge badge-warning";
-                        }
-                        else if (item.Status == "bootcamp")
-                        {
-                        color = "badge badge-info";
-                        } *@
+                          
                             <tr>
                                 <th>@item.WriterMessageID</th>
                                 <td>@item.Subject</td>
                                 <td>@item.ReceiverName</td>
-                                <td>@item.Content</td>
+                  
                                 <td>@item.Date</td>
 
-                                @*  <td><label class="@color">@item.Status</label></td> *@
-                                <td><a href="/Writer/Default/AnnouncementDetails/@item.WriterMessageID" class="btn btn-outline-primary">Details</a></td>
+                        
+                                <td><a href="/Writer/Message/MessageDetails/@item.WriterMessageID" class="btn btn-outline-primary">Show Message</a></td>
 
 
                             </tr>
