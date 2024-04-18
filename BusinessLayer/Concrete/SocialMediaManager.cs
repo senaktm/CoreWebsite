@@ -4,6 +4,7 @@ using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -41,6 +42,11 @@ namespace BusinessLayer.Concrete
         public void TUpdate(SocialMedia t)
         {
             _socialMediaDal.Update(t);
+        }
+
+        public List<SocialMedia> TGetByFilter(Expression<Func<SocialMedia, bool>> filter)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -4,6 +4,7 @@ using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -31,6 +32,11 @@ namespace BusinessLayer.Concrete
         public void TDelete(UserMessage t)
         {
            _userMessageDal.Delete(t);
+        }
+
+        public List<UserMessage> TGetByFilter(Expression<Func<UserMessage, bool>> filter)
+        {
+            throw new NotImplementedException();
         }
 
         public UserMessage TGetById(int id)

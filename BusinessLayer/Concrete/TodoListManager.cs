@@ -4,6 +4,7 @@ using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -26,6 +27,11 @@ namespace BusinessLayer.Concrete
         public void TDelete(ToDoList t)
         {
            _todoListDal.Delete(t);
+        }
+
+        public List<ToDoList> TGetByFilter(Expression<Func<ToDoList, bool>> filter)
+        {
+            throw new NotImplementedException();
         }
 
         public ToDoList TGetById(int id)

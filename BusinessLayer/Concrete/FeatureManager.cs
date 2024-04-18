@@ -4,6 +4,7 @@ using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -41,6 +42,11 @@ namespace BusinessLayer.Concrete
         public void TUpdate(Feature t)
         {
             _featureDal.Update(t);
+        }
+
+        public List<Feature> TGetByFilter(Expression<Func<Feature, bool>> filter)
+        {
+            throw new NotImplementedException();
         }
     }
 }
