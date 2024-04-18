@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace CoreWebsite.Areas.Writer.Controllers
 {
     [Area("Writer")]
+    [Route("Writer/Message")]
     public class MessageController : Controller
     {
         private readonly UserManager<WriterUser> _userManager;
@@ -17,7 +18,8 @@ namespace CoreWebsite.Areas.Writer.Controllers
         {
             _userManager = userManager;
         }
-
+        [Route("")]
+        [Route("ReceiverMessage")]
         public async Task<IActionResult> ReceiverMessage(string p)
         {
             var values = await _userManager.FindByNameAsync(User.Identity.Name);
@@ -25,6 +27,8 @@ namespace CoreWebsite.Areas.Writer.Controllers
             var messageList = writerMessageManager.GetListReceiverMessage(p);
             return View(messageList);
         }
+        [Route("")]
+        [Route("SenderMessage")]
         public async Task<IActionResult> SenderMessage(string p)
         {
             var values = await _userManager.FindByNameAsync(User.Identity.Name);
@@ -34,18 +38,24 @@ namespace CoreWebsite.Areas.Writer.Controllers
         }
 
         [HttpGet]
+       
+        [Route("MessageDetails/{id}")]
         public IActionResult MessageDetails(int id)
         {
             var values = writerMessageManager.TGetById(id);
             return View(values);
         }
         [HttpGet]
+        [Route("")]
+        [Route("SendMessage")]
         public IActionResult SendMessage()
         {
             
             return View();
         }
         [HttpPost]
+        [Route("")]
+        [Route("SendMessage")]
         public async Task<IActionResult> SendMessage(WriterMessage p)
         {
             Context c = new Context();
@@ -63,7 +73,7 @@ namespace CoreWebsite.Areas.Writer.Controllers
            
        
             writerMessageManager.TAdd(p);
-            return RedirectToAction("Writer/Message/SenderMessage");
+            return RedirectToAction("SenderMessage");
         }
     }
 }

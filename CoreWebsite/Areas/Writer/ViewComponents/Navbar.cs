@@ -14,7 +14,7 @@ namespace CoreWebsite.Areas.Writer.ViewComponents
             _userManager = userManager;
         }
 
-        public async Task <IViewComponentResult> InvokeAsync()
+        public async Task<IViewComponentResult> InvokeAsync()
         {
             var values = await _userManager.FindByNameAsync(User.Identity.Name);
             ViewBag.picture = values.ImageUrl;

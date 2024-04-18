@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace CoreWebsite.Areas.Writer.Controllers
 {
     [Area("Writer")]
+    [Route("Writer/[controller]/[action]")]
     public class LoginController : Controller
     {
         private readonly SignInManager<WriterUser> _signInManager;
@@ -27,7 +28,7 @@ namespace CoreWebsite.Areas.Writer.Controllers
                 var result = await _signInManager.PasswordSignInAsync(p.Username,p.Password,true,true);
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Index","Default");
+                    return RedirectToAction("Index","Profile");
                 }
                 else
                 {
@@ -35,6 +36,12 @@ namespace CoreWebsite.Areas.Writer.Controllers
                 }
             }
             return View();
+        }
+
+        public async Task<IActionResult> LogOut(UserLoginViewModel p)
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index","Login");
         }
     }
 }
