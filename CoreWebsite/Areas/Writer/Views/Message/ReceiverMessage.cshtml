@@ -2,7 +2,7 @@
 @model List<WriterMessage>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "ReceiverMessage";
     Layout = "~/Views/Shared/_WriterLayout.cshtml";
 }
 
@@ -23,7 +23,7 @@
                             <th>Title</th>
                             <th>Sender</th>
                             <th>Details</th>
-                            <th>Status</th>
+                            <th>Date</th>
                          
 
                         </tr>
@@ -46,6 +46,8 @@
                             <tr>
                                 <th>@item.WriterMessageID</th>
                                 <td>@item.Subject</td>
+                                <td>@item.SenderName</td>
+                                <td>@item.Content</td>
                                 <td>@item.Date</td>
                     
                                @*  <td><label class="@color">@item.Status</label></td> *@
