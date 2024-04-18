@@ -50,7 +50,7 @@ namespace CoreWebsite.Areas.Writer.Controllers
         {
             Context c = new Context();
 
-            var usernamesurname = c.Users.Where(x => x.Email == p.Receiver).Select(y => y.Name + " " + y.Lastname).FirstOrDefault();
+            var usernamesurname = c.Users.Where(x => x.Email == p.Receiver).Select(y => y.Name + " " + y.Surname).FirstOrDefault();
 
             p.ReceiverName = usernamesurname;
             var values = await _userManager.FindByNameAsync(User.Identity.Name);
