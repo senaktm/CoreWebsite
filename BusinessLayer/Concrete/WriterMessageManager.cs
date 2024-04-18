@@ -7,6 +7,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace BusinessLayer.Concrete
 {
@@ -19,9 +20,9 @@ namespace BusinessLayer.Concrete
             this.writerMessageDal = writerMessageDal;
         }
 
-        public List<WriterMessage> TGetByFilter(Expression<Func<WriterMessage, bool>> filter)
+        public List<WriterMessage> TGetByFilter(string p)
         {
-            throw new NotImplementedException();
+            return writerMessageDal.TGetByFilter(x=>x.Receiver ==p);
         }
 
         public void TAdd(WriterMessage t)
@@ -48,5 +49,6 @@ namespace BusinessLayer.Concrete
         {
             throw new NotImplementedException();
         }
+
     }
 }

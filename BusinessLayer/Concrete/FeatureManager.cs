@@ -44,7 +44,7 @@ namespace BusinessLayer.Concrete
             _featureDal.Update(t);
         }
 
-        public List<Feature> TGetByFilter(Expression<Func<Feature, bool>> filter)
+        public List<Feature> TGetByFilter()
         {
             throw new NotImplementedException();
         }

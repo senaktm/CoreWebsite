@@ -44,7 +44,7 @@ namespace BusinessLayer.Concrete
            _skillDal.Update(t);
         }
 
-        public List<Skill> TGetByFilter(Expression<Func<Skill, bool>> filter)
+        public List<Skill> TGetByFilter()
         {
             throw new NotImplementedException();
         }

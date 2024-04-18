@@ -34,7 +34,7 @@ namespace BusinessLayer.Concrete
            _userMessageDal.Delete(t);
         }
 
-        public List<UserMessage> TGetByFilter(Expression<Func<UserMessage, bool>> filter)
+        public List<UserMessage> TGetByFilter()
         {
             throw new NotImplementedException();
         }

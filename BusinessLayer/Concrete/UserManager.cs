@@ -29,7 +29,7 @@ namespace BusinessLayer.Concrete
             _userDal.Delete(t);
         }
 
-        public List<User> TGetByFilter(Expression<Func<User, bool>> filter)
+        public List<User> TGetByFilter()
         {
             throw new NotImplementedException();
         }

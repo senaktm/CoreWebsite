@@ -44,7 +44,7 @@ namespace BusinessLayer.Concrete
             _testimonialDal.Update(t);
         }
 
-        public List<Testimonial> TGetByFilter(Expression<Func<Testimonial, bool>> filter)
+        public List<Testimonial> TGetByFilter()
         {
             throw new NotImplementedException();
         }

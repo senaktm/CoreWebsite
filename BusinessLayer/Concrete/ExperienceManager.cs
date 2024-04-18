@@ -44,7 +44,7 @@ namespace BusinessLayer.Concrete
             _experienceDal.Update(t);
         }
 
-        public List<Experience> TGetByFilter(Expression<Func<Experience, bool>> filter)
+        public List<Experience> TGetByFilter()
         {
             throw new NotImplementedException();
         }

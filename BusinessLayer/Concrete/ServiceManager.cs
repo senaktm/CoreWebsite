@@ -44,7 +44,7 @@ namespace BusinessLayer.Concrete
             _serviceDal.Update(t);
         }
 
-        public List<Service> TGetByFilter(Expression<Func<Service, bool>> filter)
+        public List<Service> TGetByFilter()
         {
             throw new NotImplementedException();
         }

@@ -44,7 +44,7 @@ namespace BusinessLayer.Concrete
             _messageDal.Update(t);
         }
 
-        public List<Message> TGetByFilter(Expression<Func<Message, bool>> filter)
+        public List<Message> TGetByFilter()
         {
             throw new NotImplementedException();
         }

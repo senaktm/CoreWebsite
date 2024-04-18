@@ -44,7 +44,7 @@ namespace BusinessLayer.Concrete
             _contactDal.Update(t);
         }
 
-        public List<Contact> TGetByFilter(Expression<Func<Contact, bool>> filter)
+        public List<Contact> TGetByFilter()
         {
             throw new NotImplementedException();
         }

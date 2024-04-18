@@ -44,7 +44,7 @@ namespace BusinessLayer.Concrete
             _portfolioDal.Update(t);
         }
 
-        public List<Portfolio> TGetByFilter(Expression<Func<Portfolio, bool>> filter)
+        public List<Portfolio> TGetByFilter()
         {
             throw new NotImplementedException();
         }

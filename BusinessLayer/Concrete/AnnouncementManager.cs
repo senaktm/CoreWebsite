@@ -29,7 +29,7 @@ namespace BusinessLayer.Concrete
             _announcementDal.Delete(t);
         }
 
-        public List<Announcement> TGetByFilter(Expression<Func<Announcement, bool>> filter)
+        public List<Announcement> TGetByFilter()
         {
             throw new NotImplementedException();
         }

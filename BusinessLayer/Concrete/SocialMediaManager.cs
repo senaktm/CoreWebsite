@@ -44,7 +44,7 @@ namespace BusinessLayer.Concrete
             _socialMediaDal.Update(t);
         }
 
-        public List<SocialMedia> TGetByFilter(Expression<Func<SocialMedia, bool>> filter)
+        public List<SocialMedia> TGetByFilter()
         {
             throw new NotImplementedException();
         }
