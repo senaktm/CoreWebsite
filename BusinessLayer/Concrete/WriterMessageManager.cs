@@ -11,7 +11,7 @@ using System.Web;
 
 namespace BusinessLayer.Concrete
 {
-    public class WriterMessageManager : IGenericService<WriterMessage>
+    public class WriterMessageManager : IGenericService<WriterMessage>,IWriterMessageService
     {
         IWriterMessageDal writerMessageDal;
 
@@ -20,9 +20,10 @@ namespace BusinessLayer.Concrete
             this.writerMessageDal = writerMessageDal;
         }
 
-        public List<WriterMessage> TGetByFilter(string p)
+        public List<WriterMessage> TGetByFilter()
         {
-            return writerMessageDal.TGetByFilter(x=>x.Receiver ==p);
+            //return writerMessageDal.TGetByFilter(x=>x.Receiver ==p);
+            throw new NotImplementedException();
         }
 
         public void TAdd(WriterMessage t)
@@ -50,5 +51,14 @@ namespace BusinessLayer.Concrete
             throw new NotImplementedException();
         }
 
+        public List<WriterMessage> GetListSenderMessage(string p)
+        {
+            return writerMessageDal.TGetByFilter(x=>x.Sender ==p);
+        }
+
+        public List<WriterMessage> GetListReceiverMessage(string p)
+        {
+            return writerMessageDal.TGetByFilter(x=>x.Receiver ==p);
+        }
     }
 }
