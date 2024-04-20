@@ -6,9 +6,7 @@ namespace CoreWebsite.Controllers
     {
         public IActionResult Index()
         {
-            ViewBag.v1 = "Dashboard Page";
-            ViewBag.v2 = "Dashboard";
-            ViewBag.v3 = "EditDashboard";
+          
             return View();
         }
     }
