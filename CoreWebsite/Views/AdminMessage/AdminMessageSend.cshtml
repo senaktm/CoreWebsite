@@ -1,0 +1,38 @@
+﻿@model EntityLayer.Concrete.WriterMessage
+@{
+    ViewData["Title"] = "AdminMessageSend";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+
+
+@using (Html.BeginForm("AdminMessageSend", "AdminMessage", FormMethod.Post))
+{
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Experience Adding Page </h4>
+                <form class="forms-sample">
+                    <div class="form-group">
+                        @Html.Label("Subject")
+                        @Html.TextBoxFor(x => x.Subject, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("Receiver")
+                        @Html.TextBoxFor(x => x.Receiver, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("Content")
+                        @Html.TextAreaFor(x => x.Content, 8,3,new { @class = "form-control" })
+                    </div>
+
+                    <button type="submit" class="btn btn-primary mr-2">Send</button>
+                    <button class="btn btn-dark">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+}
+
+<script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/vendors/js/vendor.bundle.base.js"></script>

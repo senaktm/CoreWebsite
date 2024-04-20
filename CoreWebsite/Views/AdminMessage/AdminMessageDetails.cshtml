@@ -1,0 +1,49 @@
+﻿@model EntityLayer.Concrete.WriterMessage
+@{
+    ViewData["Title"] = "AdminMessageDetails";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<h1>AdminMessageDetails</h1>
+
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Message Details Page </h4>
+            <form class="forms-sample">
+               
+                <div class="form-group">
+                    @Html.Label("ID")
+                    @Html.TextBoxFor(x => x.WriterMessageID, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.Label("Subject")
+                    @Html.TextBoxFor(x => x.Subject, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.Label("Sender Name")
+                    @Html.TextBoxFor(x => x.SenderName, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.Label("Receiver Name")
+                    @Html.TextBoxFor(x => x.ReceiverName, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.Label("Date")
+                    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.Label("Content")
+                    @Html.TextAreaFor(x => x.Content, 6, 3, new { @class = "form-control" })
+                </div>
+
+                <a asp-action="ReceiverMessageList" class="btn btn-primary mr-2">Go Back to Admin Inbox </a>
+                <a asp-action="SenderMessageList" class="btn btn-primary mr-2">Go Back to Admin Outbox </a>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/vendors/js/vendor.bundle.base.js"></script>
