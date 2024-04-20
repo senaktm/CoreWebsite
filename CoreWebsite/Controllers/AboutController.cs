@@ -11,9 +11,7 @@ namespace CoreWebsite.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            ViewBag.v1 = "About Page";
-            ViewBag.v2 = "About";
-            ViewBag.v3 = "EditAbout";
+          
             var values = aboutManager.TGetById(1);
             return View(values);
         }

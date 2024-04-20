@@ -16,9 +16,7 @@ namespace CoreWebsite.Controllers
         [HttpGet]
         public IActionResult AddService()
         {
-            ViewBag.v1 = "Add Service Page";
-            ViewBag.v2 = "Service";
-            ViewBag.v3 = "AddService";
+          
             return View();
         }
         [HttpPost]
@@ -36,9 +34,7 @@ namespace CoreWebsite.Controllers
         [HttpGet]
         public IActionResult EditService(int id)
         {
-            ViewBag.v1 = "Edit Service Page";
-            ViewBag.v2 = "Service";
-            ViewBag.v3 = "EditService";
+           
             var value = serviceManager.TGetById(id);
             return View(value);
         }
