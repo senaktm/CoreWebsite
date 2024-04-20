@@ -22,7 +22,7 @@ namespace BusinessLayer.Concrete
 
         public List<WriterMessage> TGetByFilter()
         {
-            //return writerMessageDal.TGetByFilter(x=>x.Receiver ==p);
+            //return writerMessageDal.TGetByFilter(x => x.Receiver == p);
             throw new NotImplementedException();
         }
 
@@ -33,7 +33,7 @@ namespace BusinessLayer.Concrete
 
         public void TDelete(WriterMessage t)
         {
-            throw new NotImplementedException();
+            writerMessageDal.Delete(t);
         }
 
         public WriterMessage TGetById(int id)
