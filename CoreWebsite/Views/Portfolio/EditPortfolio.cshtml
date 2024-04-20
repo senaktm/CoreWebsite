@@ -11,7 +11,7 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">Portfolio Editing Page </h4>
-                <form class="forms-sample">
+                <form class="forms-sample" method="post">
                     @Html.HiddenFor(x => x.PortfolioID)
                     <div class="form-group">
                         @Html.Label("Name")
@@ -22,6 +22,11 @@
                         @Html.Label("ImageUrl")
                         @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
                         @Html.ValidationMessageFor(x => x.ImageUrl)
+                    </div>
+                    <div class="form-group">
+                    @Html.Label("ImageUrl2")
+                    @Html.TextBoxFor(x => x.ImageUrl2, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.ImageUrl2)
                     </div>
                     <div class="form-group">
                         @Html.Label("ProjectUrl")
@@ -67,3 +72,4 @@
     </div>
 
 }
+<script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/vendors/js/vendor.bundle.base.js"></script>

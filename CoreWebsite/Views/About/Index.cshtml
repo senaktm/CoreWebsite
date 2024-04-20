@@ -2,7 +2,7 @@
 
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
 
 
@@ -14,41 +14,52 @@
 <br />
 <br />
 
+
+
+
 @using (Html.BeginForm("Index", "About", FormMethod.Post))
 {
-    @Html.HiddenFor(x => x.AboutID)
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Experience Editing Page </h4>
+                <form class="forms-sample">
+                    @Html.HiddenFor(x => x.AboutID)
+                    <div class="form-group">
+                        @Html.Label("Title")
+                        @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("Description")
+                        @Html.TextAreaFor(x => x.Description, 10, 2, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("Age")
+                        @Html.TextBoxFor(x => x.Age, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("Mail")
+                        @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("Phone")
+                        @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("Address")
+                        @Html.TextBoxFor(x => x.Address, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("ImageUrl")
+                        @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+                    </div>
 
-    @Html.Label("Title")
-    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
-    <br />
+                    <button type="submit" class="btn btn-primary mr-2">Update</button>
+         
+                </form>
+            </div>
+        </div>
+    </div>
 
-    @Html.Label("Description")
-    @Html.TextAreaFor(x => x.Description,10,2, new { @class = "form-control" })
-    <br />
-
-    @Html.Label("Age")
-    @Html.TextBoxFor(x => x.Age, new { @class = "form-control" })
-    <br />
-
-    @Html.Label("Mail")
-    @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
-    <br />
-
-    @Html.Label("Phone")
-    @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
-    <br />
-
-    @Html.Label("Address")
-    @Html.TextBoxFor(x => x.Address, new { @class = "form-control" })
-    <br />
-
-    @Html.Label("ImageUrl")
-    @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
-    <br />
-
-    <br />
-    <button class="btn btn-success">SAVE</button>
 }
-
-
 <script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/vendors/js/vendor.bundle.base.js"></script>
